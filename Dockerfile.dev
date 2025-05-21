@@ -17,3 +17,4 @@ RUN pnpm run build
 EXPOSE 4200
 
 CMD ["pnpm", "run", "pm2"]
+
