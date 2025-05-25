@@ -12,8 +12,8 @@ export async function middleware(request: NextRequest) {
     nextUrl.pathname.startsWith('/uploads/') ||
     nextUrl.pathname.startsWith('/p/') ||
     nextUrl.pathname.startsWith('/icons/') ||
-    nextUrl.pathname.startsWith('/terms-of-service') ||
-    nextUrl.pathname.startsWith('/privacy')
+    nextUrl.pathname.endsWith('/terms-of-service') ||
+    nextUrl.pathname.endsWith('/privacy')
   ) {
     return NextResponse.next();
   }
