@@ -16,6 +16,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
 import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
 import { GetPostsDto } from '@gitroom/nestjs-libraries/dtos/posts/get.posts.dto';
+import { UploadUrlDto } from '@gitroom/nestjs-libraries/dtos/media/upload-url.dto';
 
 @ApiTags('Public API')
 @Controller('/public/v1')
@@ -46,6 +47,33 @@ export class PublicIntegrationsController {
     );
   }
 
+  @Post('/upload-url')
+  async uploadFromUrl(
+    @GetOrgFromRequest() org: Organization,
+    @Body() body: UploadUrlDto
+  ) {
+    try {
+      // Download and upload the file from the provided URL
+      const uploadedPath = await this.storage.uploadSimple(body.url);
+      
+      // Extract filename from URL or use a default name
+      const urlParts = body.url.split('/');
+      const fileName = urlParts[urlParts.length - 1] || 'uploaded-file';
+      
+      // Save the file record to the database
+      return this._mediaService.saveFile(
+        org.id,
+        fileName,
+        uploadedPath
+      );
+    } catch (error) {
+      throw new HttpException(
+        { msg: 'Failed to download or upload file from URL', error: error instanceof Error ? error.message : 'Unknown error' },
+        400
+      );
+    }
+  }
+
   @Get('/posts')
   async getPosts(
     @GetOrgFromRequest() org: Organization,
@@ -57,6 +85,14 @@ export class PublicIntegrationsController {
       posts,
       // comments,
     };
+  }
+
+  @Get('/posts/:id')
+  async getPost(
+    @GetOrgFromRequest() org: Organization,
+    @Param('id') id: string
+  ) {
+    return this._postsService.getPost(org.id, id);
   }
 
   @Post('/posts')
