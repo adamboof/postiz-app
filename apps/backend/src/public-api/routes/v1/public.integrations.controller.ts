@@ -87,6 +87,14 @@ export class PublicIntegrationsController {
     };
   }
 
+  @Get('/posts/:id')
+  async getPost(
+    @GetOrgFromRequest() org: Organization,
+    @Param('id') id: string
+  ) {
+    return this._postsService.getPost(org.id, id);
+  }
+
   @Post('/posts')
   @CheckPolicies([AuthorizationActions.Create, Sections.POSTS_PER_MONTH])
   createPost(
