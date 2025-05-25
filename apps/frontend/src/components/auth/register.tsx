@@ -213,14 +213,14 @@ export function RegisterAfter({
         <div className={clsx('text-[12px]', interClass)}>
           By registering you agree to our{' '}
           <a
-            href={`https://post.hirea.app/terms-of-service`}
+            href={`/terms-of-service`}
             className="underline hover:font-bold"
           >
             Terms of Service
           </a>{' '}
           and{' '}
           <a
-            href={`https://post.hirea.app/privacy`}
+            href={`/privacy`}
             className="underline hover:font-bold"
           >
             Privacy Policy
