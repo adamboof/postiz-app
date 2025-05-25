@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function TermsOfServicePage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 !text-white">
       <h1 className="mb-6 text-3xl font-bold">Terms of Service</h1>
       <div className="prose max-w-none">
         <p>
           Welcome to this self-hosted, personal instance of the Postiz
           application (the "Application"), operated by A Booth
           (“Administrator,” "I," "Me," "My"). This Application is hosted at
-          https://post.hirea.app.
+          https://postiz.hirea.app.
         </p>
 
         <h2 className="mt-4 text-xl font-semibold">1. Acceptance of Terms & Scope of Use</h2>

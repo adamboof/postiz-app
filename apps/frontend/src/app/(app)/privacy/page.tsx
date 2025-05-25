@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 !text-white">
       <h1 className="mb-6 text-3xl font-bold">Privacy Policy</h1>
       <div className="prose max-w-none">
         <p>
           A Booth ("Administrator," "I," "Me," "My") operates this
           self-hosted, personal instance of the Postiz application (the
-          "Application"), accessible via https://post.hirea.app. This Privacy
+          "Application"), accessible via https://postiz.hirea.app. This Privacy
           Policy describes how I collect, use, and safeguard the personal
           information of Users of this Application.
         </p>
