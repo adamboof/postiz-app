@@ -9,7 +9,7 @@ export default function TermsOfServicePage() {
           Welcome to this self-hosted, personal instance of the Postiz
           application (the "Application"), operated by A Booth
           (“Administrator,” "I," "Me," "My"). This Application is hosted at
-          https://postiz.hirea.app.
+          https://post.hirea.app.
         </p>
 
         <h2 className="mt-4 text-xl font-semibold">1. Acceptance of Terms & Scope of Use</h2>

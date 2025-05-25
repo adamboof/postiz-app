@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
         <p>
           A Booth ("Administrator," "I," "Me," "My") operates this
           self-hosted, personal instance of the Postiz application (the
-          "Application"), accessible via https://postiz.hirea.app. This Privacy
+          "Application"), accessible via https://post.hirea.app. This Privacy
           Policy describes how I collect, use, and safeguard the personal
           information of Users of this Application.
         </p>
